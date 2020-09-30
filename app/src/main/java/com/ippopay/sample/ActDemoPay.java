@@ -9,13 +9,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
-import com.ippopay.core.FPayListener;
+import com.ippopay.core.IppoPayListener;
 import com.ippopay.core.IppoPayLog;
 import com.ippopay.core.IppoPayPay;
 import com.ippopay.models.Customer;
 import com.ippopay.models.OrderData;
 
-public class ActDemoPay extends AppCompatActivity implements FPayListener {
+public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
 
     private EditText edtAmount, edtCurrencyCode;
 
