@@ -6,6 +6,7 @@ We distribute our SDK from the Maven Central Repository. To begin with this SDK 
 add the following dependency.
 
 ```
+
 implementation 'com.ippopay:IppoPaySDK:1.0.0'
 ```
 
@@ -14,7 +15,6 @@ implementation 'com.ippopay:IppoPaySDK:1.0.0'
 To initialize the SDK add the below line of code with the public key you retrieved from ippopay merchant panel. If you don't have a public key create new one.
 
 ```
-
 IppoPayPay.init(this, "Your Unique Public Key");
 ```
 
