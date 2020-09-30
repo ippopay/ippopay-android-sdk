@@ -9,10 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
-
-import java.util.Random;
-
-import com.ippopay.sample.R;
 import com.ippopay.core.FPayListener;
 import com.ippopay.core.IppoPayLog;
 import com.ippopay.core.IppoPayPay;
@@ -22,10 +18,6 @@ import com.ippopay.models.OrderData;
 public class ActDemoPay extends AppCompatActivity implements FPayListener {
 
     private EditText edtAmount, edtCurrencyCode;
-
-    private static final String PUBLIC_KEY = "YOUR_MERCHANT_KEY_HERE";
-
-    private static String ORDER_ID = "ORDER_ID_HERE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,15 +43,15 @@ public class ActDemoPay extends AppCompatActivity implements FPayListener {
                 showToast("CurrencyCode is empty");
             else {
                 IppoPayLog.setLogVisible(true);
-                IppoPayPay.init(this, PUBLIC_KEY);
+                IppoPayPay.init(this, "YOUR_MERCHANT_KEY_HERE");
                 OrderData orderData = new OrderData();
-                orderData.setOrderId(ORDER_ID);
+                orderData.setOrderId("ORDER_ID_HERE");
                 orderData.setOrderAmount(Double.parseDouble(amount));
                 orderData.setCustomColor("#780991");
                 orderData.setFont(ResourcesCompat.getFont(this, R.font.poppins_medium));
                 orderData.setOrderDescription("Mobile Phone");
                 orderData.setCurrencyCode(currencyCode);
-                customer = new Customer();
+                Customer customer = new Customer();
                 customer.setName("John Doe");
                 customer.setEmail("email@gmail.com");
                 customer.setMobile("123456789");
