@@ -111,5 +111,5 @@ If you are using Proguard for your builds, modify the Proguard rule file:
 
 ## Sample Payment Reference.
 
-Please check [this link](https://github.com/ippopay/ippopay-android-sdk/master/app/src/main/java/com/ippopay/sample/ActDemoPay.java) for sample payment with above steps.
+Please check [this link](https://github.com/ippopay/ippopay-android-sdk/blob/master/app/src/main/java/com/ippopay/sample/ActDemoPay.java) for sample payment with above steps.
 
