@@ -43,7 +43,7 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
                 showToast("CurrencyCode is empty");
             else {
                 IppoPayLog.setLogVisible(true);
-                IppoPayPay.init(this, "YOUR_MERCHANT_KEY_HERE");
+                IppoPayPay.init(this, "YOUR_PUBLIC_KEY_HERE");
                 OrderData orderData = new OrderData();
                 orderData.setOrderId("ORDER_ID_HERE");
                 orderData.setOrderAmount(Double.parseDouble(amount));
