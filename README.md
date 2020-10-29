@@ -7,7 +7,7 @@ add the following dependency.
 
 ```
 
-implementation 'com.ippopay:IppoPaySDK:1.0.6'
+implementation 'com.ippopay:IppoPaySDK:1.0.7'
 ```
 
 ## Step - 2 - Initialize SDK 
