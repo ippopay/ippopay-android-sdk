@@ -12,7 +12,6 @@ import androidx.core.content.res.ResourcesCompat;
 import com.ippopay.core.IppoPayListener;
 import com.ippopay.core.IppoPayLog;
 import com.ippopay.core.IppoPayPay;
-import com.ippopay.models.Customer;
 import com.ippopay.models.OrderData;
 
 public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
@@ -35,30 +34,14 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
 
     private void onPaymentClick() {
         try {
-            String amount = edtAmount.getText().toString();
-            String currencyCode = edtCurrencyCode.getText().toString();
-            if (amount.isEmpty())
-                showToast("Amount is empty");
-            else if (currencyCode.isEmpty())
-                showToast("CurrencyCode is empty");
-            else {
-                IppoPayLog.setLogVisible(true);
-                IppoPayPay.init(this, "YOUR_PUBLIC_KEY_HERE");
-                OrderData orderData = new OrderData();
-                orderData.setOrderId("ORDER_ID_HERE");
-                orderData.setOrderAmount(Double.parseDouble(amount));
-                orderData.setCustomColor("#780991");
-                orderData.setFont(ResourcesCompat.getFont(this, R.font.poppins_medium));
-                orderData.setOrderDescription("Mobile Phone");
-                orderData.setCurrencyCode(currencyCode);
-                Customer customer = new Customer();
-                customer.setName("John Doe");
-                customer.setEmail("email@gmail.com");
-                customer.setMobile("123456789");
-                orderData.setCustomer(customer);
-                IppoPayPay.setPaymentListener(this);
-                IppoPayPay.makePayment(orderData);
-            }
+            IppoPayLog.setLogVisible(true);
+            IppoPayPay.init(this, "YOUR PUBLIC KEY");
+            OrderData orderData = new OrderData();
+            orderData.setOrderId("ORDER_ID_HERE");
+            orderData.setCustomColor("#780991");
+            orderData.setFont(ResourcesCompat.getFont(this, R.font.poppins_medium));
+            IppoPayPay.setPaymentListener(this);
+            IppoPayPay.makePayment(orderData);
         } catch (Exception e) {
             e.printStackTrace();
         }
