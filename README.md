@@ -7,7 +7,7 @@ add the following dependency.
 
 ```
 
-implementation 'com.ippopay:IppoPaySDK:1.1.0'
+implementation 'com.ippopay:IppoPaySDK:1.1.2'
 ```
 
 ## Step - 2 - Initialize SDK 
@@ -30,7 +30,7 @@ OrderData orderData = new OrderData(); // Ippopay Order Data Model Class Instanc
 orderData.setOrderDescription("Mobile Phone");  // any description.
 orderData.setOrderId("ORDER_ID_HERE"); // unique order id.
 
-// Need only if you did not give customer information while creating Order ID . 
+// Need only if you did not give customer information while creating Order. 
 Customer customer = new Customer();
 customer.setName("name");
 customer.setEmail("email@gmail.com");
@@ -38,7 +38,6 @@ PhoneObj phoneObj = new PhoneObj();
 phoneObj.setCountryCode("91");
 phoneObj.setMobNumber("9123456789");
 customer.setPhoneObj(phoneObj);
-
 orderData.setCustomer(customer);
 
 ```

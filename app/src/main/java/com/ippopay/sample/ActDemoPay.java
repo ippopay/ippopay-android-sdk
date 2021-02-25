@@ -2,7 +2,6 @@ package com.ippopay.sample;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,8 +15,6 @@ import com.ippopay.models.OrderData;
 
 public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
 
-    private EditText edtAmount, edtCurrencyCode;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,17 +24,15 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        edtAmount = findViewById(R.id.edt_cost);
-        edtCurrencyCode = findViewById(R.id.edt_currency);
         findViewById(R.id.btn_guest_pay).setOnClickListener(v -> onPaymentClick());
     }
 
     private void onPaymentClick() {
         try {
             IppoPayLog.setLogVisible(true);
-            IppoPayPay.init(this, "YOUR PUBLIC KEY");
+            IppoPayPay.init(this, "PUBLIC_KEY");
             OrderData orderData = new OrderData();
-            orderData.setOrderId("ORDER_ID_HERE");
+            orderData.setOrderId("ORDER_ID");
             orderData.setCustomColor("#780991");
             orderData.setFont(ResourcesCompat.getFont(this, R.font.poppins_medium));
             IppoPayPay.setPaymentListener(this);
