@@ -121,7 +121,7 @@ tools:replace="android:theme,android:allowBackup"
 
 ```
 
-Java Version Should be 1.8. so past the below code in app level build.gradle file
+Java Version Should be 1.8. so paste the below code in app level build.gradle file
 
 ```
 compileOptions {
