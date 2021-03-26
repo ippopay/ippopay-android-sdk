@@ -27,7 +27,6 @@ You can create the order data or payment input with our OrderData Model class. H
 OrderData orderData = new OrderData(); // Ippopay Order Data Model Class Instance
 //orderData.setCustomColor("#780991"); // make payment page loading color as app color.
 //orderData.setFont(ResourcesCompat.getFont(this,R.font.poppins_medium)); // make payment page text font as app font.
-orderData.setOrderDescription("Mobile Phone");  // any description.
 orderData.setOrderId("ORDER_ID_HERE"); // unique order id.
 
 // Need only if you did not give customer information while creating Order. 
@@ -110,6 +109,25 @@ If you are using Proguard for your builds, modify the Proguard rule file:
 -keep class com.ippopay.** {*;}
 
 -optimizations !method/inlining/*
+
+```
+
+## Note
+
+If you are facing any manifest merge conflict use this below code:
+
+```
+tools:replace="android:theme,android:allowBackup"
+
+```
+
+Java Version Should be 1.8. so past the below code in app level build.gradle file
+
+```
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        }
 
 ```
 
