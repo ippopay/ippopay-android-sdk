@@ -7,7 +7,7 @@ add the following dependency.
 
 ```
 
-implementation 'com.ippopay:IppoPaySDK:1.1.3'
+implementation 'com.ippopay:IppoPaySDK:2.0.1'
 ```
 
 ## Step - 2 - Initialize SDK 
@@ -57,6 +57,11 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
     @Override
     public void onTransactionSuccess(String transactionId) {
         // Success Callback
+    }
+
+    @Override
+    public void onTransactionPending(String error, String transaction_id) {
+         // Pending Callback.
     }
 
     @Override
