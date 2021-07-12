@@ -7,7 +7,7 @@ add the following dependency.
 
 ```
 
-implementation 'com.ippopay:IppoPaySDK:2.0.2'
+implementation 'com.ippopay:IppoPaySDK:2.0.5'
 ```
 
 ## Step - 2 - Initialize SDK 
@@ -28,6 +28,7 @@ OrderData orderData = new OrderData(); // Ippopay Order Data Model Class Instanc
 //orderData.setCustomColor("#780991"); // make payment page loading color as app color.
 //orderData.setFont(ResourcesCompat.getFont(this,R.font.poppins_medium)); // make payment page text font as app font.
 orderData.setOrderId("ORDER_ID_HERE"); // unique order id.
+orderData.setCustomerEditable(false); // customer info edit option.
 
 // Need only if you did not give customer information while creating Order. 
 Customer customer = new Customer();

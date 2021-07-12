@@ -30,11 +30,13 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
     private void onPaymentClick() {
         try {
             IppoPayLog.setLogVisible(true);
+
             IppoPayPay.init(this, "Your Unique Public Key");
             OrderData orderData = new OrderData();
             orderData.setOrderId("ORDER_ID_HERE");
             orderData.setCustomColor("#780991");
-            orderData.setFont(ResourcesCompat.getFont(this, R.font.poppins_medium));
+            orderData.setCustomerEditable(false);
+//            orderData.setFont(ResourcesCompat.getFont(this, R.font.gilroy_regular));
             IppoPayPay.setPaymentListener(this);
             IppoPayPay.makePayment(orderData);
         } catch (Exception e) {
