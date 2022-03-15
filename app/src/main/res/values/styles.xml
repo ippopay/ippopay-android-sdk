@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="IppoTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#1654C2</item>
+        <item name="colorPrimaryDark">#1654C2</item>
+        <item name="colorAccent">#1654C2</item>
+        <item name="android:textColor">#1654C2</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#1654C2</item>
+    </style>
+
     <style name="VView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
