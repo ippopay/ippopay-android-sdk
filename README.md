@@ -6,7 +6,7 @@ We distribute our SDK from the Maven Central Repository. To begin with this SDK 
 add the following dependency.
 
 ```
-implementation 'com.ippopay:IppoPaySDK:2.0.9'
+implementation 'com.ippopay:IppoPaySDK:2.1.0'
 ```
 
 ## Step - 2 - Initialize SDK 
