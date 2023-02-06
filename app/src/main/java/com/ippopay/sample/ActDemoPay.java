@@ -11,7 +11,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.ippopay.core.IppoPayListener;
 import com.ippopay.core.IppoPayLog;
 import com.ippopay.core.IppoPayPay;
-import com.ippopay.models.OrderData;
+import com.ippopay.data.model.OrderData;
 
 public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
 
@@ -29,13 +29,12 @@ public class ActDemoPay extends AppCompatActivity implements IppoPayListener {
 
     private void onPaymentClick() {
         try {
-            IppoPayLog.setLogVisible(true);
+            IppoPayLog.Companion.setLogVisible(true);
 
             IppoPayPay.init(this, "Your Unique Public Key");
             OrderData orderData = new OrderData();
             orderData.setOrderId("ORDER_ID_HERE");
             orderData.setCustomColor("#780991");
-            orderData.setCustomerEditable(false);
 //            orderData.setFont(ResourcesCompat.getFont(this, R.font.gilroy_regular));
             IppoPayPay.setPaymentListener(this);
             IppoPayPay.makePayment(orderData);
